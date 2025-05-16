@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package common;
+
+option go_package = "maxfuls.pipelines.pipeline;pipeline";
+
+message ProcessRequest { string name = 1; }
+
+message ProcessResponse {
+  int32 code = 1;
+  string message = 2;
+}

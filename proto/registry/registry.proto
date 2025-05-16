@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package registry;
+
+option go_package = "maxfuls.pipelines.pipeline;pipeline";
+
+service Registry {
+  rpc Register(RegistryRequest) returns (RegistryResponse) {}
+  rpc Get(GetRequest) returns (GetResponse) {}
+}
+
+message RegistryRequest {
+  string name = 1;
+  string ip = 2;
+  string port = 3;
+}
+
+message RegistryResponse {
+  int32 code = 1;
+  string message = 2;
+}
+
+message GetRequest { string name = 1; }
+
+message GetResponse {
+  int32 code = 1;
+  string message = 2;
+  string ip = 3;
+  string port = 4;
+}

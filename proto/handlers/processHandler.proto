@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package handlers;
+
+option go_package = "maxfuls.pipelines.pipeline;pipeline";
+
+import "common/common.proto";
+
+service ProcessHandler {
+  rpc Handle(common.ProcessRequest) returns (common.ProcessResponse) {}
+}
