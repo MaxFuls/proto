@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package handlers;
+
+option go_package = "maxfuls.pipelines.handlers;handlers";
+
+import "common/common.proto";
+
+service ValidateHandler {
+    rpc Handle(common.ProcessRequest) returns (common.ProcessResponse) {}
+}
+
